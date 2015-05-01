@@ -7,7 +7,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=64, null=True, blank=False)
     
     # Preferences
-    communication_options = ArrayField(models.TextField(), default=[])
+    communication_options = ArrayField(models.TextField(), default=list)
     
     def add_communication_option(self, option, double_opt_in=False):
         option = option.strip()
